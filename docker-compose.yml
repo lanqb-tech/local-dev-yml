@@ -15,7 +15,10 @@ services:
         environment:
             WEBROOT: '/var/www/mobile-frontend-lanqb/public'
             ERRORS: 1
-            XDEBUG_CONFIG: 192.168.31.198
+            ENABLE_XDEBUG: 1
+            XDEBUG_CONFIG: "remote_host=192.168.31.198"
+            #phpstorm xdebug 配置
+            PHP_IDE_CONFIG: "serverName=my.local"
         extra_hosts:
             # 替换为本机 IP
             - "localip:192.168.31.198"
