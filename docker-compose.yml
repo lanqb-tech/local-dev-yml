@@ -49,7 +49,7 @@ services:
             MYSQL_ROOT_PASSWORD: root
 
     workspace:
-        image: daocloud.io/yxl1992/workspace:master
+        image: daocloud.io/yxl1992/tool-environment
         volumes_from:
           - codepath
         tty: true
