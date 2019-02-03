@@ -38,6 +38,8 @@ services:
 
     mysql:
         image: mysql:5.7
+        restart: on-failure
+        command: --slow_query_log=1 --long_query_time=1 --log_output=TABLE
         volumes:
             - mysql:/var/lib/mysql
         ports:
@@ -47,6 +49,7 @@ services:
             MYSQL_USER: homestead
             MYSQL_PASSWORD: secret
             MYSQL_ROOT_PASSWORD: root
+            TZ: Asia/Shanghai
 
     workspace:
         image: daocloud.io/yxl1992/tool-environment
